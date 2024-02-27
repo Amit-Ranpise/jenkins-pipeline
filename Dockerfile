@@ -1,12 +1,10 @@
-FROM node:latest
+FROM python:3.8
 
-WORKDIR /usr/src/app
+EXPOSE 8080
+WORKDIR /app
 
-COPY package*.json ./
+COPY . ./
 
-RUN npm install
+RUN pip install -r requirements.txt
 
-COPY . .
-
-EXPOSE 3000
-CMD [ "node", "index.js" ]
+CMD ["python", "app.py"]
