@@ -21,6 +21,4 @@ jobs:
     - name: build image
       run: docker build -t amit2408/jenkins-pipeline-app:latest .
     - name: push image
-      run: |
-#docker login -u amit2408 -P ${{ secrets.DOCKER_TOKEN }}
-       docker push amit2408/jenkins-pipeline-app:latest
+      run: docker push amit2408/jenkins-pipeline-app:latest
